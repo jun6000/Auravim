@@ -92,6 +92,15 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Toggleterm
+    use {
+        'akinsho/toggleterm.nvim',
+        tag = "*",
+        config = function()
+            require('toggleterm').setup()
+        end
+    }
+
     -- Bufferline
     use {
         'akinsho/bufferline.nvim',
