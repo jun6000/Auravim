@@ -44,12 +44,12 @@ cmp.setup {
         end, { 'i', 's' }), ]]
     },
     sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-        { name = 'buffer', keyword_length = 5 },
+        { name = 'nvim_lsp', keyword_length = 5 },
+        { name = 'luasnip', keyword_length = 5 },
         { name = 'path' },
         { name = 'cmdline' },
         { name = 'emoji' },
+        { name = 'buffer', keyword_length = 5 },
         -- { name = 'cmp_tabnine' },
     },
 }
@@ -84,5 +84,33 @@ require('lspconfig')['dockerls'].setup{
     capabilities = capabilities
 }
 require('lspconfig')['docker_compose_language_service'].setup{
+    capabilities = capabilities
+}
+require('lspconfig')['gopls'].setup{
+    capabilities = capabilities,
+    cmd = {"gopls"},
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedparams = true,
+            }
+        }
+    }
+}
+require('lspconfig')['tsserver'].setup{
+    capabilities = capabilities
+}
+require('lspconfig')['eslint'].setup{
+    capabilities = capabilities
+}
+require('lspconfig')['html'].setup{
+    capabilities = capabilities
+}
+require('lspconfig')['jsonls'].setup{
+    capabilities = capabilities
+}
+require('lspconfig')['cssls'].setup{
     capabilities = capabilities
 }

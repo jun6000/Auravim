@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    
+
     -- Aura theme
     use {
         'daltonmenezes/aura-theme',
