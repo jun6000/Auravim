@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
-        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+        run = ":MasonUpdate", -- :MasonUpdate updates registry contents
     }
 
     -- Treesitter
@@ -37,8 +37,8 @@ return require('packer').startup(function(use)
         'daltonmenezes/aura-theme',
         rtp = 'packages/neovim',
         config = function()
-            vim.cmd('colorscheme aura-dark')
-        end
+            vim.cmd [[ colorscheme aura-soft-dark ]]
+        end,
     }
 
     -- Telescope
@@ -50,7 +50,10 @@ return require('packer').startup(function(use)
     -- Lualine
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = function()
+            require('lualine').setup()
+        end
     }
 
     -- Nvim-tree
@@ -60,7 +63,7 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
         },
     }
-    
+
     -- Autocompletion
     use {
         'hrsh7th/nvim-cmp',
@@ -105,6 +108,14 @@ return require('packer').startup(function(use)
     use {
         'akinsho/bufferline.nvim',
         tag = "*",
-        requires = 'nvim-tree/nvim-web-devicons'
+        requires = 'nvim-tree/nvim-web-devicons',
+    }
+
+    -- Startup dashboard
+    use {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = [[require('dash')]],
+        requires = {'nvim-tree/nvim-web-devicons'}
     }
 end)

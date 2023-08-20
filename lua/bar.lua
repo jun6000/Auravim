@@ -7,6 +7,7 @@ bufferline.setup {
             local icon = level:match("error") and " " or ""
             return " " .. icon .. " " .. count
         end,
+        always_show_bufferline = true,
         offsets = {
             {
                 filetype = "NvimTree",

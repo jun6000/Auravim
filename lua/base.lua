@@ -1,3 +1,4 @@
+local vim = vim
 vim.cmd('autocmd!')
 
 -- disable netrw at the very start of your init.lua (strongly advised)
@@ -48,5 +49,5 @@ vim.opt.formatoptions:append { 'r' }
 -- Sync clipboard with unnamedplus
 vim.opt.clipboard='unnamedplus'
 
--- Add transparency to bg
-vim.api.nvim_set_hl(0, "Normal", { bg = NONE, ctermbg = NONE })
+-- Set colorscheme
+-- vim.cmd.colorscheme("aura-soft-dark")

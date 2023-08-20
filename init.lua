@@ -2,14 +2,11 @@ require('base')
 require('plugins')
 require('mason').setup()
 require('mason-lspconfig').setup()
-require('bufferline').setup{}
-require('bar')
-require('Comment').setup()
 require('completion')
-require('filetree')
 require('keymaps')
 require('lspconfig')
-require('lualine').setup()
+require('bar')
+require('filetree')
 
 -- More settings
 local opt = vim.opt
