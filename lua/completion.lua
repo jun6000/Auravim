@@ -46,9 +46,9 @@ cmp.setup {
     sources = {
         { name = 'nvim_lsp', keyword_length = 5 },
         { name = 'luasnip', keyword_length = 5 },
-        { name = 'path' },
-        { name = 'cmdline' },
-        { name = 'emoji' },
+        { name = 'path', keyword_length = 5 },
+        { name = 'cmdline', keyword_length = 5 },
+        { name = 'emoji', keyword_length = 5 },
         { name = 'buffer', keyword_length = 5 },
         -- { name = 'cmp_tabnine' },
     },

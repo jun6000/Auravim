@@ -2,7 +2,7 @@ require('nvim-tree').setup {
     hijack_cursor = true,
     view = {
         float = {
-            enable = true,
+            enable = false,
         }
     },
     renderer = {
