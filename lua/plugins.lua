@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons' -- File icons
     use 'lewis6991/gitsigns.nvim' -- git status
     use 'tpope/vim-sleuth' -- Auto-detect tabwidth and shiftwidth
+    use 'onsails/lspkind-nvim' -- Pictographs for completions
 
     -- Load on an autocommand event
     use {'andymass/vim-matchup', event = 'VimEnter'} -- Extends %

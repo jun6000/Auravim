@@ -1,10 +1,22 @@
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp = require('cmp')
+local luasnip = require('luasnip')
+local lspkind = require('lspkind')
 -- local tabnine = require('cmp_tabnine.config')
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 cmp.setup {
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol',
+            maxwidth = 50,
+            ellipsis_char = '...',
+
+            before = function (entry, vim_item, ...)
+                return vim_item
+            end
+        })
+    },
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -25,22 +37,22 @@ cmp.setup {
             select = true,
         },
         --[[ ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_locally_jumpable() then
-                luasnip.expand_or_jump()
-            else
-                fallback()
-            end
+        if cmp.visible() then
+        cmp.select_next_item()
+        elseif luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
+        else
+        fallback()
+        end
         end, { 'i', 's' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.locally_jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
+        if cmp.visible() then
+        cmp.select_prev_item()
+        elseif luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+        else
+        fallback()
+        end
         end, { 'i', 's' }), ]]
     },
     sources = {
@@ -55,13 +67,13 @@ cmp.setup {
 }
 
 --[[ tabnine:setup({
-    max_lines = 1000,
-    max_num_results = 20,
-    sort = true,
-    run_on_every_keystroke = true,
-    snippet_placeholder = '..',
-    ignored_file_types = {},
-    show_prediction_length = false
+max_lines = 1000,
+max_num_results = 20,
+sort = true,
+run_on_every_keystroke = true,
+snippet_placeholder = '..',
+ignored_file_types = {},
+show_prediction_length = false
 }) ]]
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
