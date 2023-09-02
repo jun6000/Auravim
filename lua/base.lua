@@ -48,6 +48,3 @@ vim.opt.formatoptions:append { 'r' }
 
 -- Sync clipboard with unnamedplus
 vim.opt.clipboard='unnamedplus'
-
--- Set colorscheme
--- vim.cmd.colorscheme("aura-soft-dark")
