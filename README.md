@@ -23,10 +23,9 @@ sudo docker run -w /root -it --rm archlinux:latest sh
 pacman -Syu --noconfirm git neovim ripgrep
 mkdir .config
 git clone https://github.com/jun6000/Auravim .config/nvim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-~/.local/share/nvim/site/pack/packer/start/packer.nvim
-nvim -c "PackerSync"
+nvim
 ```
+- Relaunch nvim after the plugins have been installed.
 
 ### Note
 - Incase a plugin fails to install run the ` PackerSync ` command again.
