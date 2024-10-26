@@ -111,7 +111,7 @@ require('lspconfig')['gopls'].setup{
         }
     }
 }
-require('lspconfig')['tsserver'].setup{
+require('lspconfig')['ts_ls'].setup{
     capabilities = capabilities
 }
 require('lspconfig')['eslint'].setup{

@@ -14,5 +14,4 @@ local opt = vim.opt
 opt.wrap = true
 opt.linebreak = true
 opt.showbreak = "↳" .. " "
--- opt.so = 999
 opt.so = 0
